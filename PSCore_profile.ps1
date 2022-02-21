@@ -1,6 +1,67 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
- 
+
+# functions
+function mcd { 
+    mkdir @args; cd @args 
+}
+
+# git automations
+function Git-Init() {
+    param($repo)
+
+    gh repo create $repo --private --confirm
+    mcd $repo;
+    git init;
+    ni .gitignore, .gitattributes, LICENSE, README.md;
+    Add-Content -Path .gitignore -Value "node_modules";
+    Add-Content -Path .gitattributes -Value "# Auto detect text files and perform LF normalization
+* text=auto";
+    Add-Content -Path LICENSE -Value 'MIT License
+
+Copyright (c) 2022 Tasnimul Hasan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.';
+
+    git add .;
+    git commit -m "initial commit";
+    git branch -M main;
+    git remote add origin https://github.com/TasnimulHasan007/$repo.git
+    git push -u origin main
+    code .;
+    git remote -v
+}
+
+set-alias -name ghi -value Git-Init
+
+function Git-Commit() {
+    param(
+        [string] $message
+    )
+    git add .
+    git commit -m $message
+    git push
+}
+
+set-alias -name ghc -value Git-Commit
+
+# customizations 
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module -Name PSReadLine
@@ -10,7 +71,7 @@ Import-Module -Name z
 Import-Module -Name Terminal-Icons
 
 Import-Module -Name oh-my-posh
-Set-PoshPrompt -Theme iterm2
+Set-PoshPrompt -Theme oceanic
 
 # PSReadLine
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -597,34 +658,3 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
-# functions
-function _ {
-    cd $HOME\workspace
-}
-
-# make and change into directory
-function mcd { 
-    mkdir @args; cd @args 
-}
-
-# git automations
-function Git-Init(){
-    param($repo)
-    git init
-    git branch -M main
-    git remote add origin https://github.com/TasnimulHasan007/$repo.git
-    git remote -v
-}
-
-set-alias -name ghi -value Git-Init
-
-function Git-Commit() {
-    param(
-        [string] $message
-    )
-    git add .
-    git commit -m $message
-    git push
-}
-
-set-alias -name ghc -value Git-Commit
