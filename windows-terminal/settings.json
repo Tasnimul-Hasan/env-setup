@@ -1,16 +1,17 @@
 {
+  "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
+    {
+      "command": "paste",
+      "keys": "ctrl+v"
+    },
     {
       "command": {
         "action": "copy",
         "singleLine": false
       },
       "keys": "ctrl+c"
-    },
-    {
-      "command": "paste",
-      "keys": "ctrl+v"
     },
     {
       "command": "find",
@@ -25,40 +26,32 @@
       "keys": "alt+shift+d"
     }
   ],
-  "alwaysShowTabs": false,
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "initialCols": 90,
   "profiles": {
     "defaults": {
-      "colorScheme": "Material Theme - Ocean",
       "font": {
-        "face": "CaskaydiaCove NF",
-        "size": 13
+        "face": "CaskaydiaCove NF"
       },
-      "startingDirectory": "%USERPROFILE%\\workspace"
+      "startingDirectory": "%USERPROFILE%\\Desktop\\workspace"
     },
     "list": [
       {
-        "commandline": "powershell.exe",
-        "font": {
-          "face": "CaskaydiaCove NF"
-        },
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
         "name": "Windows PowerShell"
       },
       {
-        "commandline": "cmd.exe",
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
         "name": "Command Prompt"
       },
       {
-        "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -nologo",
-        "font": {
-          "face": "CaskaydiaCove NF"
-        },
+        "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\" -nologo",
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
         "name": "PowerShell",
@@ -118,29 +111,6 @@
       "selectionBackground": "#FFFFFF",
       "white": "#CCCCCC",
       "yellow": "#C19C00"
-    },
-    {
-      "background": "#162228",
-      "black": "#90A4AE",
-      "blue": "#4FC3F7",
-      "brightBlack": "#78909C",
-      "brightBlue": "#29B6F6",
-      "brightCyan": "#26C6DA",
-      "brightGreen": "#66BB6A",
-      "brightPurple": "#B4009E",
-      "brightRed": "#F44336",
-      "brightWhite": "#CFD8DC",
-      "brightYellow": "#FF9800",
-      "cursorColor": "#01A299",
-      "cyan": "#80DEEA",
-      "foreground": "#CAD8D9",
-      "green": "#81C784",
-      "name": "Material Theme - Ocean",
-      "purple": "#881798",
-      "red": "#EF5350",
-      "selectionBackground": "#145C5C",
-      "white": "#CAD8D9",
-      "yellow": "#FFB74D"
     },
     {
       "background": "#282C34",
@@ -303,7 +273,5 @@
       "white": "#C0C0C0",
       "yellow": "#808000"
     }
-  ],
-  "theme": "dark",
-  "useAcrylicInTabRow": true
+  ]
 }

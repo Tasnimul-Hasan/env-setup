@@ -61,17 +61,19 @@ function Git-Commit() {
 
 set-alias -name ghc -value Git-Commit
 
-# customizations 
+# customizations
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module -Name PSReadLine
 }
-Import-Module -Name posh-git
 Import-Module -Name z
 Import-Module -Name Terminal-Icons
+Import-Module -Name posh-git
 
-Import-Module -Name oh-my-posh
-Set-PoshPrompt -Theme oceanic
+oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\jandedobbeleer.omp.json | Invoke-Expression
+
+Clear-Host
+
 
 # PSReadLine
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -657,4 +659,3 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet test")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
-
