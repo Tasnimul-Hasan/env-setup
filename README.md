@@ -1,14 +1,22 @@
 ## Softwares
 
 - #### Version Control :
-  - #### <a target="_blank" href="https://git-scm.com/">Git</a>
-  - #### <a target="_blank" href="https://cli.github.com/">GitHub CLI</a>
-- #### Shell : <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2#installing-the-msi-package">Powershell Core</a>
+  - #### <a href="https://git-scm.com/">Git</a>
+  - #### <a href="https://cli.github.com/">GitHub CLI</a>
+- #### Shell : <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2#installing-the-msi-package">Powershell Core</a>
 - #### Package Managers :
-  - #### Chocolatey
+  - #### <a href="https://chocolatey.org/install">Chocolatey</a>
     ```ps1
     Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
     ```
+- #### Code Editor: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+  ```ps1
+    choco install vscode
+  ```
+- #### Terminal Emulator: <a href="https://code.visualstudio.com/">Windows Terminal</a>
+  ```ps1
+    choco install microsoft-windows-terminal
+  ```
 
 ## Windows Terminal
 
