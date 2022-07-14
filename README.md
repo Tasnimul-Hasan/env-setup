@@ -1,3 +1,15 @@
+## Softwares
+
+- #### Version Control :
+  - #### <a target="_blank" href="https://git-scm.com/">Git</a>
+  - #### <a target="_blank" href="https://cli.github.com/">GitHub CLI</a>
+- #### Shell : <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2#installing-the-msi-package">Powershell Core</a>
+- #### Package Managers :
+  - #### Chocolatey
+    ```ps
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
+    ```
+
 ## Windows Terminal
 
 - Chocolatey: `choco install microsoft-windows-terminal`
