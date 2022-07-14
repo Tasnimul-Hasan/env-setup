@@ -6,7 +6,7 @@
 - #### Shell : <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2#installing-the-msi-package">Powershell Core</a>
 - #### Package Managers :
   - #### Chocolatey
-    ```ps
+    ```ps1
     Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
     ```
 
