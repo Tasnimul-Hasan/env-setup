@@ -12,11 +12,11 @@
     ```
 - Code Editor : <a href="https://code.visualstudio.com/">Visual Studio Code</a>
   ```ps1
-    choco install vscode
+  choco install vscode
   ```
 - Terminal Emulator : <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a>
   ```ps1
-    winget install Microsoft.WindowsTerminal
+  winget install Microsoft.WindowsTerminal
   ```
 
 ## Fonts
@@ -28,25 +28,25 @@
 
 - _[Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons/)_
   ```ps1
-    Install-Module -Name Terminal-Icons
+  Install-Module -Name Terminal-Icons
   ```
 - _[z](https://www.powershellgallery.com/packages/z/1.1.13)_
 
   ```ps1
-    Install-Module -Name z
+  Install-Module -Name z
   ```
 
 - _[PSReadLine](https://www.powershellgallery.com/packages/PSReadLine/2.2.0-beta1)_
 
   ```ps1
-    Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+  Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
   ```
 
 - _[posh-git](https://www.powershellgallery.com/packages/posh-git/)_
   ```ps1
-    Install-Module -Name posh-git
+  Install-Module -Name posh-git
   ```
 - _[oh-my-posh](https://ohmyposh.dev/docs/installation/windows)_
   ```ps1
-    winget install JanDeDobbeleer.OhMyPosh -s winget
+  winget install JanDeDobbeleer.OhMyPosh -s winget
   ```
