@@ -15,30 +15,31 @@ function Git-Init() {
     git init;
     ni .gitignore, .gitattributes, LICENSE, README.md;
     Add-Content -Path .gitignore -Value "node_modules";
-    Add-Content -Path .gitattributes -Value "# Auto detect text files and perform LF normalization
-* text=auto";
-    Add-Content -Path LICENSE -Value 'MIT License
-Copyright (c) 2022 Tasnimul Hasan
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.';
+    Add-Content -Path .gitattributes -Value 
+    "# Auto detect text files and perform LF normalization
+    * text=auto";
+    Add-Content -Path LICENSE -Value 
+    'MIT License
+    Copyright (c) 2022 Tasnimul Hasan
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.';
 
     git add .;
     git commit -m "initial commit";
-    git branch -M main;
-    git remote add origin https://github.com/TasnimulHasan007/$repo.git
+    git remote add origin https://github.com/Tasnimul-Hasan/$repo.git
     git push -u origin main
     code .;
     git remote -v
@@ -56,6 +57,30 @@ function Git-Commit() {
 }
 
 set-alias -name ghc -value Git-Commit
+
+function Git-Sparse-Checkout{
+    param(
+        $repo, $subfolder, $branch
+    )
+
+    if(!$branch) {$branch = main};
+
+    # magic
+    git init;
+    git remote add origin $repo;
+    git config core.sparsecheckout true;
+    echo [string] $subfolder >> .git/info/sparse-checkout;
+    git pull origin $branch;
+
+    # move everything to the root of the folder
+    mv $subfolder/* ./;
+    rm $subfolder.Split('/')[0] -re -fo;
+
+    # do this if you don't want to make it a git repository
+    rm ./.git -re -fo;
+}
+
+set-alias -name gsc -value Git-Sparse-Checkout
 
 # customizations
 if ($host.Name -eq 'ConsoleHost')
@@ -655,6 +680,7 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet test")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
