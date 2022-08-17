@@ -10,61 +10,54 @@ function mcd {
 function Git-Init() {
     param($repo)
 
-    gh repo create $repo --private --confirm
+    # Creating private repository on github
+    gh repo create $repo --private
     mcd $repo;
+    # Initializing local git repo
     git init;
+    # creating neccessary files
     ni .gitignore, .gitattributes, LICENSE, README.md;
+    # adding content to the files
     Add-Content -Path .gitignore -Value "node_modules";
-    Add-Content -Path .gitattributes -Value 
-    "# Auto detect text files and perform LF normalization
-    * text=auto";
-    Add-Content -Path LICENSE -Value 
-    'MIT License
-    Copyright (c) 2022 Tasnimul Hasan
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.';
+    Add-Content -Path .gitattributes -Value "# Auto detect text files and perform LF normalization`n* text=auto";
+    Add-Content -Path LICENSE -Value "MIT License`nCopyright (c) 2022 Tasnimul Hasan`nPermission is hereby granted, free of charge, to any person obtaining a copy`nof this software and associated documentation files (the `"Software`"), to deal`nin the Software without restriction, including without limitation the rights`nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell`ncopies of the Software, and to permit persons to whom the Software is`nfurnished to do so, subject to the following conditions:`nThe above copyright notice and this permission notice shall be included in all`ncopies or substantial portions of the Software.`nTHE SOFTWARE IS PROVIDED `"AS IS`", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR`nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,`nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE`nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER`nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,`nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE`nSOFTWARE."; 
+    Add-Content -Path README.md -Value "Hello Shobaike";
 
-    git add .;
-    git commit -m "initial commit";
-    git remote add origin https://github.com/Tasnimul-Hasan/$repo.git
-    git push -u origin main
-    code .;
-    git remote -v
+    # pushing to github
+    ghc "Initial Commit" https://github.com/Tasnimul-Hasan/$repo`.git main;
 }
 
 set-alias -name ghi -value Git-Init
 
 function Git-Commit() {
     param(
-        [string] $message
+        [string] $message,
+        $origin,
+        $branch
     )
-    git add .
-    git commit -m $message
-    git push
+    git add .;
+    git commit -m $message;
+    if($origin -and $branch) {
+        git remote add origin $origin;
+        git push -u origin $branch;
+        git remote -v;
+    } else {
+        git push
+    }
 }
 
 set-alias -name ghc -value Git-Commit
 
 function Git-Sparse-Checkout{
     param(
-        $repo, $subfolder, $branch
+        $link
     )
 
-    if(!$branch) {$branch = main};
-
+    $parts = $link.Split('/');
+    $repo = ($parts[0..4] -Join '/') + '.git';
+    $branch = $parts[6];
+    $subfolder = $parts[7..$parts.count] -Join '/';
+       
     # magic
     git init;
     git remote add origin $repo;
@@ -78,6 +71,9 @@ function Git-Sparse-Checkout{
 
     # do this if you don't want to make it a git repository
     rm ./.git -re -fo;
+
+    # cherry on top
+    echo "`nDownloaded folder: $subfolder `nFrom: $repo `nBranch: $branch"; 
 }
 
 set-alias -name gsc -value Git-Sparse-Checkout
