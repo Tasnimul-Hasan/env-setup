@@ -28,7 +28,7 @@ So that people stare at you in the cafe thinking you are a magician or something
 
 Now go ahead and open it. Then run the command `whoami`. **Congrats!** You have written your first terminal command.
 
-![You have bad internet or I screwed up](./screenshots/powershell-intro.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/powershell-intro.png)
 _Yours may look a little different. But the functionality is similar._
 
 ## Moving around the file system
@@ -37,7 +37,7 @@ _Yours may look a little different. But the functionality is similar._
 
 In the terminal, you are always inside a folder. To know where exactly are you, you can use the command `whereami`. Just kidding, it's `pwd`.
 
-![You have bad internet or I screwed up](./screenshots/pwd.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/pwd.png)
 
 **NB**: Here `pwd` stands for `Present Working Directory`. Same command works on unix based systems.
 
@@ -45,7 +45,7 @@ In the terminal, you are always inside a folder. To know where exactly are you, 
 
 You can use `ls` to list all the files and folders in that particular location.
 
-![You have bad internet or I screwed up](./screenshots/ls.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/ls.png)
 
 **NB**: Here `ls` stands for `list`. Same command works on unix based systems.
 
@@ -53,19 +53,19 @@ You can use `ls` to list all the files and folders in that particular location.
 
 Now to enter a directory (folder), use `cd` follwed by the name of that folder. You can just type first few characters and hit `tab` and it'll autocomplete the name of the directory for you.
 
-![You have bad internet or I screwed up](./screenshots/cd.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/cd.png)
 
 To move 1 level backwards, use `cd ..`
 
-![You have bad internet or I screwed up](./screenshots/cd-back.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/cd-back.png)
 
 And to move more than 1 level, use `cd ../..` , `cd ../../..` and so on.
 
-![You have bad internet or I screwed up](./screenshots/cd-back-mult.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/cd-back-mult.png)
 
 Finally, I have one more for you. `cd ~` takes you to the `user` folder on windows and `home` folder on unix based systems.
 
-![You have bad internet or I screwed up](./screenshots/cd-home.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/cd-home.png)
 
 **NB**:
 
@@ -92,7 +92,8 @@ If you don't pass any argument to the `ls` command, it lists the containings in 
 
 The `fo` flag is an alias for `-Force`. Which allows it to show hidden directories.
 
-![You have bad internet or I screwed up](./screenshots/flags-and-arguments.png)
+![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/flags-and-arguments.png)
+
 _As you can see, the `-fo` flag revealed the `.git` directory which was hidden._
 
 **bakita pore likhtechi. kal exam, ghumaite hobe**
