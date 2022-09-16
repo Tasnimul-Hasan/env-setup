@@ -24,7 +24,7 @@ So that people stare at you in the cafe thinking you are a magician or something
 
 ## Installing powershell
 
-[Click here](https://github.com/PowerShell/PowerShell/releases/) and the download the latest version of powershell accoriding to your operating system and install it. If you are already on windows and you have powershell installed, you still download the latest version. Otherwise microsoft may steal your laptop.
+[Click here](https://github.com/PowerShell/PowerShell/releases/) and the download the latest version of powershell accoriding to your operating system and install it. If you are already on windows and you have powershell installed, you should still download the latest version. Otherwise microsoft may steal your laptop.
 
 Now go ahead and open it. Then run the command `whoami`. **Congrats!** You have written your first terminal command.
 
