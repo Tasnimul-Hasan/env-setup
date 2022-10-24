@@ -1,4 +1,6 @@
-﻿; source: https://gist.github.com/nocaoper/b872f97cda29bd8f0f2617606abd9fe4
+﻿; Capslock is mapped to ESC when pressed on its own, and CTRL when pressed in combination with any other key
+; Shift + Capslock will act as regular
+; source: https://gist.github.com/nocaoper/b872f97cda29bd8f0f2617606abd9fe4
 
 LShift & Capslock::
 SetCapsLockState, % (State:=!State) ? "on" : "alwaysoff"
@@ -9,16 +11,16 @@ g_AbortSendEsc := false
 #InstallKeybdHook
 SetCapsLockState, alwaysoff
 Capslock::
-g_DoNotAbortSendEsc := true
-Send {LControl Down}
-KeyWait, CapsLock
-Send {LControl Up}
-if ( A_PriorKey = "CapsLock")
-{
-	if(g_DoNotAbortSendEsc){
-		Send {Esc}
+	g_DoNotAbortSendEsc := true
+	Send {LControl Down}
+	KeyWait, CapsLock
+	Send {LControl Up}
+	if ( A_PriorKey = "CapsLock")
+	{
+		if(g_DoNotAbortSendEsc){
+			Send {Esc}
+		}
 	}
-}
 return
 
 ~*^a::
@@ -67,17 +69,17 @@ return
 ~*^PgDn::
 ~*^Tab::
 ~*^Return::
-~*^,::
+	~*^,::
 ~*^.::
 ~*^/::
-~*^;::
+	~*^;::
 ~*^'::
 ~*^[::
 ~*^]::
 ~*^\::
 ~*^-::
 ~*^=::
-~*^`::
+	~*^`::
 ~*^F1::
 ~*^F2::
 ~*^F3::
@@ -90,5 +92,5 @@ return
 ~*^F10::
 ~*^F11::
 ~*^F12::
-    g_DoNotAbortSendEsc := false
-    return
+	g_DoNotAbortSendEsc := false
+return
