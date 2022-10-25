@@ -4,10 +4,9 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Emails
-::@mail::thtanim2005@gmail.com
-::@tail::hello.tasnimul@gmail.com
-::@vail::589.dreamer.589@gmail.com
-::@sayad::online2sayad@gmail.com
+::@mail::your_email.com
+::@tail::your_email2.com
+::@vail::your_email3.com
 
 ; Text
 ::@salam::as salamu alaikum
