@@ -26,7 +26,7 @@ If you know nothing about powershell, you might wanna consider giving this a qui
 - _[CascaydiaCove NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip)_
 - _[Operator Mono SSm Lig](https://drive.google.com/file/d/1Je6Cc-2GYPz2QAd94yf5ne7JHolePyD7/view?usp=sharing)_
 
-## Shell Beautification
+## Dependencies
 
 - _[Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons/)_
   ```ps1
