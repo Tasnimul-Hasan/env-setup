@@ -23,16 +23,23 @@ function mcd {
 function Git-Commit() {
     param(
         [string] $message,
-        $origin,
         $branch
     )
+
+    if (!$message) {
+        $input = Read-Host("Commit Message")
+
+        if ($input) { $message = $input }
+        else {$message = Get-Date}
+    }
+    
     git add .;
     git commit -m $message;
-    if ($origin -and $branch) {
-        git remote add origin $origin;
+
+    if ($branch) {
         git push -u origin $branch;
-        git remote -v;
     }
+
     else {
         git push
     }
