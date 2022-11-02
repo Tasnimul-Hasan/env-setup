@@ -55,10 +55,8 @@ If you know nothing about powershell, you might wanna consider giving this a qui
 
 ## Use my powershell profile
 
-After you have installed the modules and the fonts, you can now run the command below to create a powershell profile similar to mine.
+Running the following command should create a powershell profile similar to mine on your machine. However, if you are not on windows, you will need to install the `oh-my-posh` dependency manually.
 
 ```ps1
 irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/setup.ps1" | iex
 ```
-
-Now restart powershell or run `reload-profile` to see the changes

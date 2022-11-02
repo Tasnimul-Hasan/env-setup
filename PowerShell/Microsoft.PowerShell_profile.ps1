@@ -76,7 +76,7 @@ Import-Module -Name z
 Import-Module -Name Terminal-Icons
 Import-Module -Name posh-git
 
-oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\star.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\star-modified.omp.json | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
