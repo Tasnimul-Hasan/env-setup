@@ -97,3 +97,4 @@ The `fo` flag is an alias for `-Force`. Which allows it to show hidden directori
 _As you can see, the `-fo` flag revealed the `.git` directory which was hidden._
 
 **bakita pore likhtechi. kal exam, ghumaite hobe**
+**well exam shesh. but janina abar kobe likhbo, cz time, energy konotai nai. most importantly - no one cares.**
