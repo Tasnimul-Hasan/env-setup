@@ -55,7 +55,7 @@ If you know nothing about powershell, you might wanna consider giving this a qui
 
 ## Use my powershell profile
 
-Running the following command should create a powershell profile similar to mine on your machine. However, if you are not on windows, you will need to install the `oh-my-posh` dependency manually.
+Running the following command should create a powershell profile similar to mine on your machine. However, if you are not on windows, you will need to install the `oh-my-posh` dependency manually. Don't forget to install a [Nerd Font](https://www.nerdfonts.com/) in order for the theme to look good.
 
 ```ps1
 irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/setup.ps1" | iex

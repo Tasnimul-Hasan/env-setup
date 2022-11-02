@@ -10,7 +10,7 @@ if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
 }
 # If the file already exists, show the message and do nothing.
 else {
-  Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1 -Force
+  Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1
   Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/PowerShell/Microsoft.PowerShell_profile.ps1 -o $PROFILE
   Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
 }
@@ -29,5 +29,4 @@ if ($env:POSH_THEMES_PATH) {
   Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/modified-posh-themes/star-modified.omp.json -o $env:POSH_THEMES_PATH/star-modified.omp.json
 }
 
-# reload powershell profile
-& $PROFILE
+Write-Host "Please restart powershell" 
