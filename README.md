@@ -60,3 +60,9 @@ Running the following command should create a powershell profile similar to mine
 ```ps1
 irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/setup.ps1" | iex
 ```
+
+If you already have the modules installed, you can run the following command:
+
+```ps1
+irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/refresh.ps1" | iex
+```

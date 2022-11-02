@@ -2,6 +2,10 @@ using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
 # functions
+function refresh-profile {
+    irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/refresh.ps1" | iex
+}
+
 function reload-profile {
     & $profile
 } 
