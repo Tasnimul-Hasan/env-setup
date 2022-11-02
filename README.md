@@ -52,3 +52,13 @@ If you know nothing about powershell, you might wanna consider giving this a qui
   ```ps1
   winget install JanDeDobbeleer.OhMyPosh -s winget
   ```
+
+## Use my powershell profile
+
+After you have installed the modules and the fonts, you can now run the command below to create a powershell profile similar to mine.
+
+```ps1
+irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/setup.ps1" | iex
+```
+
+Now restart powershell or run `reload-profile` to see the changes
