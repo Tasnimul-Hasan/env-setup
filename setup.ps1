@@ -1,19 +1,24 @@
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
   try {
+    $parts = $profile.Split('\')
+    $fd = $parts[0..($parts.Length - 2)] -Join '\'
+    md $fd
+
     Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/PowerShell/Microsoft.PowerShell_profile.ps1 -o $PROFILE
-    Write-Host "The profile @ [$PROFILE] has been created."
+         Write-Host "The profile @ [$PROFILE] has been created."
   }
   catch {
     throw $_.Exception.Message
   }
 }
-# If the file already exists, show the message and do nothing.
+# If the file already exists, move it to a file called 'oldprofile.ps1' in the currect directory
 else {
   Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1 -Force
-  Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/PowerShell/Microsoft.PowerShell_profile.ps1 -o $PROFILE
-  Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
+	Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/PowerShell/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+	Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
 }
+
 
 # Install necessary modules [i don't know how to install multiple modules with one command :'( ]
 Install-Module -Name Terminal-Icons -Scope CurrentUser -Force -SkipPublisherCheck
