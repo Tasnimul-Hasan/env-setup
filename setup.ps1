@@ -28,4 +28,4 @@ winget install -e --accept-source-agreements --accept-package-agreements JanDeDo
 & $profile
 
 # download my modified star omp theme and put it inside the themes folder
-Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/modimodified-posh-themes/star-modified.omp.json -o $PROFILE$env:POSH_THEMES_PATH\star-modified.omp.json
+Invoke-RestMethod https://github.com/Tasnimul-Hasan/env-setup/raw/main/modified-posh-themes/star-modified.omp.json -o $PROFILE$env:POSH_THEMES_PATH\star-modified.omp.json
