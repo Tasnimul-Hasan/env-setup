@@ -1,10 +1,20 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
+# aliases
+set-alias vim nvim
+set-alias gvim nvim-qt
+
+# environment variables
+$env:vim_config = "$env:LOCALAPPDATA`\nvim"
+
 # functions
 function refresh-profile {
     irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/refresh.ps1" | iex
-    exit
+}
+
+function reload-profile {
+    & $profile
 }
 
 function rmf {
@@ -77,7 +87,7 @@ function Git-Sparse-Checkout {
 
 set-alias -name gsc -value Git-Sparse-Checkout
 
-# customizations
+# i don't have any idea about anything below this line :)
 if ($host.Name -eq 'ConsoleHost') {
     Import-Module -Name PSReadLine
 }
