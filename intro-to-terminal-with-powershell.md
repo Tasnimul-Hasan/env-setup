@@ -29,6 +29,7 @@ So that people stare at you in the cafe thinking you are a magician or something
 Now go ahead and open it. Then run the command `whoami`. **Congrats!** You have written your first terminal command.
 
 ![You have bad internet or I screwed up](https://raw.githubusercontent.com/Tasnimul-Hasan/env-setup/main/screenshots/powershell-intro.png)
+<br>
 _Yours may look a little different. But the functionality is similar._
 
 ## Moving around the file system
@@ -96,5 +97,7 @@ The `fo` flag is an alias for `-Force`. Which allows it to show hidden directori
 
 _As you can see, the `-fo` flag revealed the `.git` directory which was hidden._
 
+---
 **bakita pore likhtechi. kal exam, ghumaite hobe**
+<br>
 **well exam shesh. but janina abar kobe likhbo, cz time, energy konotai nai. most importantly - no one cares.**
