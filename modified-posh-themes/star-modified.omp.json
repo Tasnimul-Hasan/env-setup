@@ -7,7 +7,7 @@
         {
           "foreground": "#E89E30",
           "style": "plain",
-          "template": "root <#c9d6ce>in</> ",
+          "template": " root <#c9d6ce>in</> ",
           "type": "root"
         },
         {
@@ -16,7 +16,7 @@
             "style": "folder"
           },
           "style": "plain",
-          "template": "{{ .Path }} ",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
@@ -66,7 +66,7 @@
         {
           "foreground": "#64B5F6",
           "style": "plain",
-          "template": "\u279c ",
+          "template": " \ufb0c ",
           "type": "text"
         }
       ],
