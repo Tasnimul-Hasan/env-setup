@@ -1,8 +1,0 @@
-require("tasnimul.plugins-setup")
-require("tasnimul.core.options")
-require("tasnimul.core.keymaps")
-require("tasnimul.core.colorscheme")
-require("tasnimul.plugins.comment")
-require("tasnimul.plugins.nvim-tree")
-require("tasnimul.plugins.lualine")
-require("tasnimul.plugins.telescope")

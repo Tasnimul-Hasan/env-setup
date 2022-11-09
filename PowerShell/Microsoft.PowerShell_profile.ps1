@@ -1,10 +1,6 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-# aliases
-set-alias vim nvim
-set-alias gvim nvim-qt
-
 # environment variables
 $env:vim_config = "$env:LOCALAPPDATA`\nvim"
 
