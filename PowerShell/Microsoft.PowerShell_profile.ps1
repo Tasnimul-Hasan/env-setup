@@ -1,6 +1,16 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
+<<<<<<< HEAD
+=======
+# aliases
+set-alias vim nvim
+set-alias gvim nvim-qt
+
+# environment variables
+$env:vim_config = "$env:LOCALAPPDATA`\nvim"
+
+>>>>>>> parent of 58873c2 (i hate neovim)
 # functions
 function refresh-profile {
     irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/refresh.ps1" | iex
