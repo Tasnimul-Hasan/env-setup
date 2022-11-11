@@ -1,9 +1,6 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-# environment variables
-$env:vim_config = "$env:LOCALAPPDATA`\nvim"
-
 # functions
 function refresh-profile {
     irm "https://github.com/Tasnimul-Hasan/env-setup/raw/main/refresh.ps1" | iex
