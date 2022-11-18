@@ -1,5 +1,3 @@
-If you know nothing about powershell, you might wanna consider giving this a quick read: [Intro to the terminal with Powershell](./intro-to-terminal-with-powershell.md)
-
 ## Softwares
 
 - Version Control :
