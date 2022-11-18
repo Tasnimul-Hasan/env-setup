@@ -1,7 +1,7 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-# terminal decorations
+# decorations
 Import-Module -Name z
 Import-Module -Name Terminal-Icons
 Import-Module -Name posh-git
