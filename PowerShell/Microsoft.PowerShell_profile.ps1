@@ -4,16 +4,16 @@ using namespace System.Management.Automation.Language
 # decorations
 Import-Module -Name z
 Import-Module -Name Terminal-Icons
-Import-Module -Name posh-git
 
-oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\star-modified.omp.json | Invoke-Expression
+Invoke-Expression (&starship init powershell)
 
-# Uncomment the line below if your posh theme looks broken on first launch
+# Uncomment the line below if your theme looks broken on first launch
 # Clear-Host
 
 # aliases
 Set-Alias -Name vim -Value nvim
-Set-Alias -Name lua -Value lua53
+Set-Alias -Name cat -Value bat
+Set-Alias -Name file -Value explorer
 
 # functions
 function refresh-profile {
@@ -62,7 +62,7 @@ function Git-Commit() {
     }
 }
 
-set-alias -name gpush -value Git-Commit
+set-alias -name push -value Git-Commit
 
 # loading PSReadLine configurations
 psreadline_config
